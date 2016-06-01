@@ -1,9 +1,7 @@
 package com.predic8.boot.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Lob;
+import javax.persistence.*;
+import java.util.Date;
 
 /**
  * @author Oliver Weiler (weiler@predic8.de)
@@ -16,6 +14,12 @@ public class Post {
     private String title;
     @Lob
     private String body;
+    private Date dateCreated;
+
+    @PrePersist
+    private void setDateCreated() {
+        dateCreated = new Date();
+    }
 
     public String getTitle() {
         return title;
@@ -31,5 +35,9 @@ public class Post {
 
     public void setBody(String body) {
         this.body = body;
+    }
+
+    public Date getDateCreated() {
+        return new Date(dateCreated.getTime());
     }
 }
