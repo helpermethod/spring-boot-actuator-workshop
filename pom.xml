@@ -5,7 +5,7 @@
 
     <groupId>com.predic8.boot</groupId>
     <artifactId>spring-boot-actuator-workshop</artifactId>
-    <version>0.0.12</version>
+    <version>0.0.13</version>
     <packaging>jar</packaging>
 
     <name>spring-boot-actuator-workshop</name>
